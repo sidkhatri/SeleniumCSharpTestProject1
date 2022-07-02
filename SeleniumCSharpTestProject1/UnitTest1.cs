@@ -18,7 +18,7 @@ namespace SeleniumCSharpTestProject1
 
             CustomControl.comboBox("ContentPlaceHolder1_AllMealsCombo", "Almond");
 
-            try { Driver.Quit(); } catch (Exception e) { Console.WriteLine("Nothing to see here!"); }
+            try { Driver.Quit(); } catch (Exception) { Console.WriteLine("Nothing to see here!"); }
 
 
         }
@@ -33,8 +33,9 @@ namespace SeleniumCSharpTestProject1
             homePage.ClickLogin();
             loginPage.EnterUserNameAndPassword("admin", "password");
             loginPage.ClickLoginButton();
+            Assert.That(loginPage.linkLogOffExist(), Is.True);  
 
-            try { Driver.Quit(); } catch (Exception e) { Console.WriteLine("Nothing to see here!"); }
+            try { Driver.Quit(); } catch (Exception) { Console.WriteLine("Nothing to see here!"); }
 
         }
     }

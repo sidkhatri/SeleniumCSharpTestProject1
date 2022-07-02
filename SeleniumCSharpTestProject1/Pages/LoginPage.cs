@@ -14,6 +14,8 @@ namespace SeleniumCSharpTestProject1.Pages
 
         IWebElement lgnBtn => Driver.FindElement(By.XPath("//body/div[2]/div[1]/div[2]/section[1]/form[1]/div[4]/div[1]/input[1]"));
 
+        IWebElement lgOffBtn => Driver.FindElement(By.LinkText("Log off"));
+
         public void EnterUserNameAndPassword (string userName, string password)
         {
             lgnField.SendKeys(userName); 
@@ -24,6 +26,8 @@ namespace SeleniumCSharpTestProject1.Pages
         {
             lgnBtn.Click(); 
         }
+
+        public bool linkLogOffExist() => lgOffBtn.Displayed; 
  
 
     }
