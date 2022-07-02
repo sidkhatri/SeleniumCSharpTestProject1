@@ -1,41 +1,41 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using SeleniumCSharpTestProject1.Pages;
 
 namespace SeleniumCSharpTestProject1
 {
-    public class Tests
+    public class Tests : DriverHelper
     {
 
-        public IWebDriver Driver; 
-        
-        [SetUp]
-        public void Setup()
-        {
-            Console.WriteLine("Windows!");
-            Driver = new ChromeDriver(); 
-
-        }
-
+       
+    
         [Test]
-        public void Test1()
+        //public void Test1()
+        //{
+        //    Driver.Navigate().GoToUrl("https://demowf.aspnetawesome.com");
+        //    Driver.Manage().Window.Maximize(); 
+        //    Driver.FindElement(By.Id("ContentPlaceHolder1_Meal")).SendKeys("Tomato");
+
+        //    CustomControl.comboBox("ContentPlaceHolder1_AllMealsCombo", "Almond");
+
+        //    try { Driver.Quit(); } catch (Exception e) { Console.WriteLine("Nothing to see here!"); }
+
+
+        //}
+
+        public void LoginTest()
         {
-            Driver.Navigate().GoToUrl("https://demowf.aspnetawesome.com");
-            Driver.FindElement(By.Id("ContentPlaceHolder1_Meal")).SendKeys("Tomato");
+            Driver.Navigate().GoToUrl("http://eaapp.somee.com");
 
-            Driver.FindElement(By.XPath("//input[@name='ctl00$ContentPlaceHolder1$ChildMeal1']/following-sibling::div[text()='Celery']")).Click();
+            HomePage homePage = new HomePage(); 
+            LoginPage loginPage = new LoginPage();
 
-            IWebElement comboControl = Driver.FindElement(By.XPath("//input[@id='ContentPlaceHolder1_AllMealsCombo-awed']"));
+            homePage.ClickLogin();
+            loginPage.EnterUserNameAndPassword("admin", "password");
+            loginPage.ClickLoginButton();
 
-            comboControl.Clear();
-            comboControl.SendKeys("Almond");
-            IWebElement dropDropDownSelect = Driver.FindElement(By.XPath("//body/div[@id='ContentPlaceHolder1_AllMealsCombo-dropmenu']/div[2]/ul[1]/li[1]"));
+            try { Driver.Quit(); } catch (Exception e) { Console.WriteLine("Nothing to see here!"); }
 
-            dropDropDownSelect.Click(); 
-            
-            Console.WriteLine("Test1");
-            Assert.Pass();
-            Driver.Close();
-            Driver.Quit(); 
         }
     }
 }
