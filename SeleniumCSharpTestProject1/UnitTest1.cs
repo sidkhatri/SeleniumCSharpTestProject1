@@ -10,19 +10,19 @@ namespace SeleniumCSharpTestProject1
        
     
         [Test]
-        //public void Test1()
-        //{
-        //    Driver.Navigate().GoToUrl("https://demowf.aspnetawesome.com");
-        //    Driver.Manage().Window.Maximize(); 
-        //    Driver.FindElement(By.Id("ContentPlaceHolder1_Meal")).SendKeys("Tomato");
+        public void Test1()
+        {
+            Driver.Navigate().GoToUrl("https://demowf.aspnetawesome.com");
+            Driver.Manage().Window.Maximize(); 
+            Driver.FindElement(By.Id("ContentPlaceHolder1_Meal")).SendKeys("Tomato");
 
-        //    CustomControl.comboBox("ContentPlaceHolder1_AllMealsCombo", "Almond");
+            CustomControl.comboBox("ContentPlaceHolder1_AllMealsCombo", "Almond");
 
-        //    try { Driver.Quit(); } catch (Exception e) { Console.WriteLine("Nothing to see here!"); }
+            try { Driver.Quit(); } catch (Exception e) { Console.WriteLine("Nothing to see here!"); }
 
 
-        //}
-
+        }
+        [Test]
         public void LoginTest()
         {
             Driver.Navigate().GoToUrl("http://eaapp.somee.com");
