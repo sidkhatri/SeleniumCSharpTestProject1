@@ -75,9 +75,11 @@ namespace SeleniumCSharpTestProject1.Feature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Login user as Administrator")]
+        [NUnit.Framework.CategoryAttribute("tag")]
         public void LoginUserAsAdministrator()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "tag"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login user as Administrator", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 5

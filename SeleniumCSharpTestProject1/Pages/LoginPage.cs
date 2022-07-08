@@ -7,8 +7,13 @@ using System.Threading.Tasks;
 
 namespace SeleniumCSharpTestProject1.Pages
 {
-    public class LoginPage : DriverHelper
+    public class LoginPage
     {
+        private IWebDriver Driver; 
+        public LoginPage(IWebDriver driver)
+        {
+            this.Driver = driver; 
+        }
         IWebElement lgnField => Driver.FindElement(By.XPath("//input[@id='UserName']"));
         IWebElement pwdField => Driver.FindElement(By.XPath("//input[@id='Password']"));
 

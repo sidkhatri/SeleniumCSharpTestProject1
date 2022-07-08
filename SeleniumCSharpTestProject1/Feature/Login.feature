@@ -1,7 +1,7 @@
 ﻿Feature: Login
 	Check if login functionality works
 
-
+@tag
 Scenario: Login user as Administrator
 	Given I navigate to application
 	And I click the Login link
